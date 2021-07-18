@@ -161,11 +161,26 @@ export default function App() {
       tellemoji((description = Objects[emoji]));
     } else if (Symbols[emoji]) {
       tellemoji((description = Symbols[emoji]));
-    } else tellemoji((description = "emoji not in database"));
+    } else tellemoji((description = "Emoji not in database"));
   }
   function emojimeaning(item) {
-    if (dictionary[item]) tellemoji((description = dictionary[item]));
-    else if (smileysndpeople[item])
+    if (smileysndpeople[item])
+      tellemoji((description = smileysndpeople[item]));
+    else if (AnimalndNature[item])
+      tellemoji((description = AnimalndNature[item]));
+    else if (TravelndPlaces[item])
+      tellemoji((description = TravelndPlaces[item]));
+    else if (foodnddrink[item]) tellemoji((description = foodnddrink[item]));
+    else if (Activity[item]) tellemoji((description = Activity[item]));
+    else if (Objects[item]) tellemoji((description = Objects[item]));
+    else if (Symbols[item]) tellemoji((description = Symbols[item]));
+  }
+  function emojimeaning(item) {
+  tellemoji((description = dictionary[item]));
+  }
+
+  function emojicategories(item) {
+     if (smileysndpeople[item])
       tellemoji((description = smileysndpeople[item]));
     else if (AnimalndNature[item])
       tellemoji((description = AnimalndNature[item]));
@@ -212,7 +227,7 @@ export default function App() {
         <br />
         {listing.map((item) => {
           return (
-            <span key={item} onMouseOver={() => emojimeaning(item)}>
+            <span key={item} onMouseOver={() => emojicategories(item)}>
               {item}
             </span>
           );

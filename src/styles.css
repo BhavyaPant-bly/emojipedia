@@ -20,4 +20,11 @@ input {
   border-radius: 0.5rem;
   font-family: "rubik";
   font-weight: bolder;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+@media screen and (max-width:600px){
+  .desc{
+    margin:0rem
+  }
 }
