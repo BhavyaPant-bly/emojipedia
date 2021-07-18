@@ -187,13 +187,14 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>EMOJIPEDIA</h1>
-      <div className="Search">
-        <span></span>
+      <div className="heading">EMOJIPEDIA</div>
+      <h2>
+        Enter Emoji:
+        <br />
         <input onChange={meaning} />
-      </div>
-      <h1>{description}</h1>
-      <h1>Emojis We know:</h1>
+      </h2>
+      <h1 className="desc">{description}</h1>
+      <h1>CATEGORIES:</h1>
       {emojisweknow.map((item) => {
         return (
           <span
@@ -206,16 +207,12 @@ export default function App() {
           </span>
         );
       })}
-      <h1>{type}</h1>
       <h1>
+        {type}
+        <br />
         {listing.map((item) => {
           return (
-            <span
-              style={{ fontSize: "2rem" }}
-              key={item}
-              onMouseOver={() => emojimeaning(item)}
-              onClick={() => listemojis(item)}
-            >
+            <span key={item} onMouseOver={() => emojimeaning(item)}>
               {item}
             </span>
           );
